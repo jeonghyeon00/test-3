@@ -13,7 +13,7 @@ import { User } from './user.entity';
       password: 'rootroot',
       database: 'Aon',
       entities: [User],
-      synchronize: true,
+      synchronize: false,
     }),
   ],
   providers: [UsersService],

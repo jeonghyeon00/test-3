@@ -1,21 +1,16 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+
 @Entity()
 export class User {
-  @PrimaryColumn('char', { length: 16 })
-  uuid: string;
+  @PrimaryGeneratedColumn()
+  public id?: number;
 
-  @Column({ length: 500 })
-  name: string;
-
-  @Column('text')
-  description: string;
+  @Column({ unique: true })
+  public email: string;
 
   @Column()
-  filename: string;
-
-  @Column('int')
-  views: number;
+  public name: string;
 
   @Column()
-  isPublished: boolean;
+  public password: string;
 }
